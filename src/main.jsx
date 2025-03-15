@@ -5,10 +5,13 @@ import { Toaster } from 'react-hot-toast';
 import { BrowserRouter } from 'react-router-dom';
 
 import App from './App.jsx';
+import store from './store';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-    <BrowserRouter>
-        <App />
-        <Toaster />
-    </BrowserRouter>
+    <Provider store={store}>
+        <BrowserRouter>
+            <App />
+            <Toaster />
+        </BrowserRouter>
+    </Provider>
 );
