@@ -82,15 +82,15 @@ function HomeLayout({ children }) {
                             </li>
 
                             {!isLoggedIn && (
-                            <li className="bottom-4 w-[90%] m-4">
-                                <div className="w-full flex items-center justify-center">
-                                    <Link to="/login">
-                                        <button className="btn btn-primary px-4 py-1 font-semibold rounded-md w-full">
+                            <li className="absolute bottom-4 left-0 w-full flex justify-center">
+                                <div className="w-[90%] flex gap-2">
+                                    <Link to="/login" className="w-1/2">
+                                        <button className="btn btn-primary px-3 py-1 text-sm rounded-md w-full">
                                             Login
                                         </button>
                                     </Link>
-                                    <Link to="/signup">
-                                        <button className="btn btn-secondary px-4 py-1 font-semibold rounded-md w-full">
+                                    <Link to="/signup" className="w-1/2">
+                                        <button className="btn btn-secondary px-3 py-1 text-sm rounded-md w-full">
                                             Signup
                                         </button>
                                     </Link>
@@ -99,14 +99,14 @@ function HomeLayout({ children }) {
                         )}
 
                             {isLoggedIn && (
-                            <li className="bottom-4 w-[90%]">
-                                <div className="w-full flex items-center justify-center">
-                                    <Link to="/user/profile">
-                                        <button className="btn btn-primary px-4 py-1 font-semibold rounded-md w-full">
+                            <li className="absolute bottom-4 left-0 w-full flex justify-center">
+                                <div className="w-[90%] flex gap-2">
+                                    <Link to="/user/profile" className="w-1/2">
+                                        <button className="btn btn-primary px-3 py-1 text-sm rounded-md w-full">
                                             Profile
                                         </button>
                                     </Link>
-                                    <button className="btn btn-secondary px-4 py-1 font-semibold rounded-md w-full" onClick={handleLogout}>
+                                    <button className="btn btn-secondary px-3 py-1 text-sm rounded-md w-1/2" onClick={handleLogout}>
                                         Logout
                                     </button>
                                 </div>
