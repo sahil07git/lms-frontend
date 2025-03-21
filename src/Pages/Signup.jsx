@@ -83,14 +83,14 @@ function Signup() {
         // dispatch create account action
         const response = await dispatch(createAccount(formData));
 
-if (response?.payload?.success) {
-    toast.success("Account created successfully! Redirecting...");
-    setTimeout(() => {
-        navigate("/");
-    }, 1500);  // ✅ Redirect after 1.5 seconds
-} else {
-    toast.error(response?.payload?.message || "Signup failed!");
-}
+            if (response?.payload?.success) {
+                toast.success("Account created successfully! Redirecting...");
+                setTimeout(() => {
+                navigate("/");
+                }, 1500);  // ✅ Redirect after 1.5 seconds
+            } else {
+        toast.error(response?.payload?.message || "Signup failed!");
+    }
 
 
         setSignupData({
