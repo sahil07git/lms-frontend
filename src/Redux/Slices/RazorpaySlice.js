@@ -16,7 +16,7 @@ export const getRazorPayId = createAsyncThunk("/razorpay/getId", async () => {
     try {
         const response = await axiosInstance.get("/payments/razorpay-key");
         return response.data;
-    } catch (error) {
+    } catch {
         toast.error("Failed to load data");
     }
 });
@@ -54,7 +54,7 @@ export const getPaymentRecord = createAsyncThunk("/payments/record", async () =>
             error: "Failed to get payment records"
         })
         return (await response).data;
-    } catch(error) {
+    } catch {
         toast.error("Operation failed");
     }
 });
