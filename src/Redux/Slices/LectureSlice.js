@@ -1,10 +1,12 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 import toast from "react-hot-toast";
+
 import axiosInstance from "../../Helpers/axiosInstance";
 
 const initialState = {
     lectures: []
 }
+
 
 export const getCourseLectures = createAsyncThunk("/course/lecture/get", async (cid) => {
     try {
@@ -12,10 +14,10 @@ export const getCourseLectures = createAsyncThunk("/course/lecture/get", async (
         toast.promise(response, {
             loading: "Fetching course lectures",
             success: "Lectures fetched successfully",
-            error: "Failed to load lectures"
+            error: "Failed to load the lectures"
         });
         return (await response).data;
-    } catch (error) {
+    } catch(error) {
         toast.error(error?.response?.data?.message);
     }
 });
@@ -54,8 +56,9 @@ export const deleteCourseLecture = createAsyncThunk("/course/lecture/delete", as
     }
 });
 
+
 const lectureSlice = createSlice({
-    name: "lectures",
+    name: "lecture",
     initialState,
     reducers: {},
     extraReducers: (builder) => {
