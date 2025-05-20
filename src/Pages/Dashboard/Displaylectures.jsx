@@ -68,7 +68,7 @@ function Displaylectures() {
                         <li className="font-semibold text-xl text-yellow-500 flex items-center justify-between">
                             <p>Lectures list</p>
                             {role === "ADMIN" && (
-                                <button onClick={() => navigate("/course/addlecture", {state: {...state}})} className="btn-primary px-2 py-1 rounded-md font-semibold text-sm">
+                                <button onClick={() => navigate("/course/addlecture", {state: {...state}})} className=" btn btn-primary px-2 py-1 rounded-md font-semibold text-sm">
                                     Add new lecture
                                 </button>
                             )}
@@ -84,7 +84,7 @@ function Displaylectures() {
                                             {lecture?.title}
                                         </p>
                                         {role === "ADMIN" && (
-                                            <button onClick={() => onLectureDelete(state?._id, lecture?._id)} className="btn-accent px-2 py-1 rounded-md font-semibold text-sm">
+                                            <button onClick={() => onLectureDelete(state?._id, lecture?._id)} className="btn btn-active btn-info px-2 py-1 rounded-md font-semibold text-sm">
                                                 Delete lecture
                                             </button>
                                         )}
@@ -95,7 +95,7 @@ function Displaylectures() {
                    </ul>
                 </div>) : (
                     role === "ADMIN" && (
-                        <button onClick={() => navigate("/course/addlecture", {state: {...state}})} className="btn-primary px-2 py-1 rounded-md font-semibold text-sm">
+                        <button onClick={() => navigate("/course/addlecture", {state: {...state}})} className="btn btn-primary px-2 py-1 rounded-md font-semibold text-sm">
                             Add new lecture
                         </button>
                     )
